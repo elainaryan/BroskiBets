@@ -1,0 +1,25 @@
+#connect, #other-info {
+    width: 70%;
+}
+
+.no-green {
+    color: #6c757d;
+}
+
+@media (max-width:768px) {
+    #connect, #other-info {
+        flex-direction: column;
+    }
+
+    #connect div, .footer-col {
+        margin: auto;
+    }
+
+    #other-info {
+        padding-top: 20px!important;
+    }
+
+    #connect-icons {
+        padding-top: 15px;
+    }
+}

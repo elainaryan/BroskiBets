@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static home_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% comment %}
+<header>
+
+    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+    <div class="overlay"></div>
+  
+    <!-- The HTML5 video element that will create the background video on the header -->
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+    </video>
+  
+    <!-- The header content -->
+    <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+        <div class="w-100 text-white">
+          <h1 class="display-3">Broski Bets</h1>
+  <!--        <p class="lead mb-0">Using HTML5 Video and Bootstrap</p>-->
+        </div>
+      </div>
+    </div>
+  </header>
+{% endcomment %}
+
+<section id="title" class="d-flex container">
+  <div class="row" id="top-row">
+    <h1 class="display-4 title">Broski Bets</h1>
+  </div>
+  <div class="row" id="bottom-row">
+    <a href="#anchor" class="anchor"><i class="fas fa-angle-double-down fa-5x" id="down-arrow"></i></a>
+  </div>
+</section>
+
+<section id="video-player">
+  <span id="anchor"></span>
+  <iframe width="100%" src="https://www.youtube.com/embed/ev01eBMxuqo?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+        
+<section id="picks">
+  <div class="container-fluid p-4" id="picks-container">
+    <div class="row justify-content-center">
+      <h1 class="text-center text-uppercase display-3">Cash out with us</h1>
+    </div>
+    <div class="row justify-content-center">
+      <h3 class="text-center text-uppercase">Today's Free Picks</h3>
+    </div>
+    <div class="row">
+      {% get_todays_picks as todays_picks %}
+      {% determine_larger_table todays_picks as border_right %}
+
+      <div class="d-none d-md-block col-md-3">
+        <img src="../static/images/test-person.png" width="100%"/>
+      </div>
+
+    <div class="col-xs-12 col-md-3 my-auto pick-table" id="scott-col">
+        {% get_scotts_picks todays_picks as scotts_picks %}
+        <table id="scott-table">
+          {% for scotts_pick in scotts_picks %}
+            <tr>
+              {% if border_right %}
+                <td>{{ scotts_pick }}</td>
+              {% else %}
+                <td class="no-border-right">{{ scotts_pick }}</td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="col-xs-12 col-md-3 my-auto pick-table" id="kane-col">
+        {% get_kanes_picks todays_picks as kanes_picks %}
+        <table id="kane-table">
+          {% for kanes_pick in kanes_picks %}
+            <tr>
+              {% if border_right %}
+                <td class="no-border-left">{{ kanes_pick }}</td>
+              {% else %}
+                <td>{{ kanes_pick }}</td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <!-- <div class="col-xs-12 col-md-3 my-auto pick-table">
+        {% get_kanes_picks todays_picks as kanes_picks %}
+        {% for kanes_pick in kanes_picks %}
+        <div class="daily-pick">
+          <h4 class="display-5">{{ kanes_pick }}</h4>
+        </div>
+        {% endfor %}
+      </div> -->
+
+      <div class="d-none d-md-block col-md-3">
+        <img src="../static/images/test-person.png" width="100%" id="test-img"/>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+{% endblock %}

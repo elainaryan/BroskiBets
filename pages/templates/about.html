@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="about">
+    <div class="container">
+        <div class="row" id="title-row">
+            <h1 class="col text-center display-3 text-uppercase ">MEET THE BROS</h1>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+            aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+            cupidatat non proident, sunt in culpa qui officia deserunt 
+            mollit anim id est laborum.
+        </p>
+
+        <div class="about-row">
+            <h3 class="display-5 text-uppercase text-center">Why trust us?</h3>
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <h1 class="stats display-3 text-center">74%</h1>
+                    <p class="text-center">success rate</p>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <h1 class="stats display-3 text-center counter" id="clients" data-count="200">0</h1>
+                    <p class="text-center">satisfied clients</p>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <h1 class="stats display-3 text-center counter" data-count="300">0</h1>
+                    <p class="text-center">days straight of custom picks</p>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+
+        <div class="about-row">
+            <h3 class="display-5 text-uppercase text-center">Hungry for more?</h3>
+            <div id="goVIP"  class="row justify-content-center">
+                <a href="{% url 'go-vip' %}">
+                    <button class="btn btn-outline-primary btn-default text-uppercase goVIPBtn">
+                        Go VIP
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/about.js' %}"></script>
+{% endblock %}

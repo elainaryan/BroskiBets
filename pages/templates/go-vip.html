@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/go-vip.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="contact">
+    <div class="container">
+        <h1 class="display-3 text-uppercase text-center">Contact Us</h1>
+        <p class="text-center">If you have any questions or are interested in purchasing a VIP
+            pass, feel free to reach out to us.
+        </p>
+
+        <div class="row text-center justify-content-center pt-3">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h3 class="logos">
+                            <a href="https://www.instagram.com/direct/t/340282366841710300949128174349936492858" target="_blank">
+                                <i class="fab fa-instagram fa-lg"></i>
+                                <br>
+                                Instagram DM
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h3 class="logos">
+                            <a href="mailto:broskibets@gmail.com" target="_blank">
+                                <i class="fas fa-envelope fa-lg"></i>
+                                <br>
+                               Email
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr/>
+        <p class="text-center">Or, you can fill out the form below, and we'll get back to you via email.</p>
+
+        <!-- <div class="row text-center">
+            <div class="col-xs-12 col-md-6" id="instagram-contact">
+                <h3>
+                    <a href="https://www.instagram.com/broskibets/" target="_blank">
+                        <i class="fab fa-instagram fa-lg"></i>
+                        <br>
+                        Instagram DM
+                    </a>
+                </h3>
+            </div>
+            <div class="col-xs-12 col-md-6" id="email-contant">
+                <h3 class="text-center">
+                    <a href="mailto:broskibets@gmail.com" target="_blank">
+                        <i class="fas fa-envelope fa-lg"></i>
+                        <br>
+                       Email
+                    </a>
+                </h3>
+            </div>
+        </div> -->
+
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field.label }}
+                <br>
+                {{ field }}
+                <br>
+            {% endfor %}
+            <div class="form-actions row justify-content-center">
+              <button type="submit" class="btn btn-default text-uppercase goVIPBtn">Send</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
