@@ -9,10 +9,6 @@ input:focus, textarea:focus {
     box-shadow: 0 0 10px green;
 }
 
-th {
-    padding-right: 20px;
-}
-
 textarea {
     resize: none;
     width: 100%;
@@ -21,4 +17,10 @@ textarea {
 
 #contact {
     padding-top: 15px;
+}
+
+@media (max-width:768px) {
+    #insta-logo {
+        margin-bottom: 10px;
+    }
 }

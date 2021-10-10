@@ -1,6 +1,5 @@
 function normalizeTableHeights() {
     let maxHeight = Math.max($("#scott-col").height(), $("#kane-col").height());
-    console.log($(window).width());
     if ($(window).width() >= 768) {
         $("#scott-col").height(maxHeight);
         $("#kane-col").height(maxHeight);
@@ -10,10 +9,5 @@ function normalizeTableHeights() {
     }
 }
 
-function changeTitleColor() {
-    $("#title").addClass("gradient");
-}
-
 window.addEventListener("load", normalizeTableHeights);
 window.addEventListener("resize", normalizeTableHeights);
-window.addEventListener("load", changeTitleColor);

@@ -1,49 +1,56 @@
-header {
-    position: relative;
-    background-color: black;
-    height: 95vh;
-    min-height: 25rem;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  header video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-  }
-  
-  header .container {
-    position: relative;
-    z-index: 2;
-  }
-  
-  header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
-  }
-  
-  .chevron-icon-container {
-      width: 100px;
-      height: 100px;
-      z-index: 3;
-  }
+/* ---------- START TITLE SECTION STYLE ----------- */
+#title {
+  height: calc(92vh - 56px);
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
 
+#title h1 {
+  font-size: 6rem;
+  color: green;
+}
+
+#title .row {
+  margin-top: auto;
+}
+
+@media (min-width:768px) {
+  #title h1 {
+    font-size: 14rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#down-arrow {
+  padding-bottom: 20px;
+}
+
+#anchor {
+  position: absolute;
+  margin-top: -55px;
+}
+/* ---------- END TITLE SECTION STYLE ----------- */
+
+
+
+/* ---------- START VIDEO PLAYER SECTION STYLE ----------- */
+#video-player {
+  height: calc(95vh - 56px);
+}
+
+#video-player iframe {
+  height: 100%;
+}
+/* ---------- END VIDEO PLAYER SECTION STYLE ----------- */
+
+
+
+/* ---------- START PICKS SECTION STYLE ----------- */
 #picks {
   background-color:  #09421f;
   background-image: linear-gradient(to bottom, #09421f, white);
@@ -52,18 +59,6 @@ header {
 #test-img {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-}
-
-#video-player {
-  height: calc(95vh - 56px);
-}
-
-#video-player iframe {
-  height: 100%;
-}
-
-footer {
-  margin: 0;
 }
 
 h1, h3 {
@@ -81,6 +76,10 @@ td {
 
 table {
   width: 100%;
+}
+
+#picks-container {
+  padding-bottom: 0!important;
 }
 
 @media (min-width:768px) {
@@ -101,44 +100,6 @@ table {
   }
 }
 
-#picks-container {
-  padding-bottom: 0!important;
-}
-
-#title {
-  background: white;
-  height: calc(92vh - 56px);
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
-
-.gradient {
-  background: green !important;
-  -webkit-transition: background-color 1500ms linear !important;
-  -ms-transition: background-color 1500ms linear !important;
-  transition: background-color 1500ms linear !important;
-
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  text-align: center !important;
-}
-
-#title h1 {
-  font-size: 6rem;
-}
-
-@media (min-width:768px) {
-  #title h1 {
-    font-size: 14rem;
-  }
-}
-
 @media (max-width:768px) {
   #scott-table tr:last-child td {
     border-bottom: none;
@@ -148,20 +109,8 @@ table {
     font-size: 3.75rem;
   }
 }
+/* ---------- END PICKS SECTION STYLE ----------- */
 
-#title .row {
-  margin-top: auto;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-#down-arrow {
-  padding-bottom: 20px;
-}
-
-#anchor {
-  position: absolute;
-  margin-top: -55px;
+footer {
+  margin: 0;
 }
