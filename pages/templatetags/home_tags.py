@@ -25,6 +25,8 @@ def get_kanes_picks(daily_pick_object):
 
 @register.simple_tag()
 def determine_larger_table(daily_pick_object):
+    if daily_pick_object == None:
+        return True
     if daily_pick_object.kanepick_set.count() > daily_pick_object.scottpick_set.count():
         return False
     return True
