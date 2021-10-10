@@ -41,27 +41,6 @@
         <hr/>
         <p class="text-center">Or, you can fill out the form below, and we'll get back to you via email.</p>
 
-        <!-- <div class="row text-center">
-            <div class="col-xs-12 col-md-6" id="instagram-contact">
-                <h3>
-                    <a href="https://www.instagram.com/broskibets/" target="_blank">
-                        <i class="fab fa-instagram fa-lg"></i>
-                        <br>
-                        Instagram DM
-                    </a>
-                </h3>
-            </div>
-            <div class="col-xs-12 col-md-6" id="email-contant">
-                <h3 class="text-center">
-                    <a href="mailto:broskibets@gmail.com" target="_blank">
-                        <i class="fas fa-envelope fa-lg"></i>
-                        <br>
-                       Email
-                    </a>
-                </h3>
-            </div>
-        </div> -->
-
         <form method="post">
             {% csrf_token %}
             {% for field in form %}

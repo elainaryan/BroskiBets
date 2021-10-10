@@ -12,7 +12,6 @@ function normalizeTableHeights() {
 
 function changeTitleColor() {
     $("#title").addClass("gradient");
-    // $("#title").animate({backgroundColor: "green"}, 1500);
 }
 
 window.addEventListener("load", normalizeTableHeights);

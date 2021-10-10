@@ -41,14 +41,12 @@ header {
   .chevron-icon-container {
       width: 100px;
       height: 100px;
-  /*    position: absolute;*/
       z-index: 3;
   }
 
 #picks {
   background-color:  #09421f;
   background-image: linear-gradient(to bottom, #09421f, white);
-  /* background-image: linear-gradient(to bottom, green, black); */
 }
 
 #test-img {
@@ -93,10 +91,6 @@ table {
   #kane-col {
     padding-left: 0;
   }
-  
-  /* #kane-col td {
-    border-left: none;
-  } */
 
   .no-border-left {
     border-left: none;
@@ -119,25 +113,12 @@ table {
   align-items: center;
   flex-direction: column;
 
-  /*  leverage cascade for cross-browser gradients  */
-  /* background-image: linear-gradient(to bottom, red, yellow); */
-  /* background: radial-gradient(
-    hsl(100 100% 60%), 
-    hsl(100 100% 11%) 
-  ) fixed; */
-  /* background: conic-gradient(
-    hsl(100 100% 60%), 
-    hsl(100 100% 11%), 
-    hsl(100 100% 60%) 
-  ) fixed; */
-  /* background: linear-gradient(black, 50% green) fixed; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
 
 .gradient {
-  /* background-image: -webkit-radial-gradient(circle, white, black) !important; */
   background: green !important;
   -webkit-transition: background-color 1500ms linear !important;
   -ms-transition: background-color 1500ms linear !important;
@@ -147,10 +128,6 @@ table {
   -webkit-text-fill-color: transparent !important;
   text-align: center !important;
 }
-
-/* #title .row {
-  width: 100%;
-} */
 
 #title h1 {
   font-size: 6rem;
@@ -173,7 +150,7 @@ table {
 }
 
 #title .row {
-  margin-top:auto;
+  margin-top: auto;
 }
 
 html {
@@ -186,6 +163,5 @@ html {
 
 #anchor {
   position: absolute;
-  /* top: -100px; */
   margin-top: -55px;
 }
