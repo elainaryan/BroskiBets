@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static home_tags %}
+{% load static pages_tags %}
 
 {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
@@ -18,7 +18,7 @@
 
 <section id="video-player">
   <span id="anchor"></span>
-  <iframe width="100%" src="https://www.youtube.com/embed/ev01eBMxuqo?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="100%" src="https://www.youtube.com/embed/p3EiT8a7dug?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
         
 <section id="picks">
@@ -27,29 +27,14 @@
       <h1 class="text-center text-uppercase display-3">Cash out with us</h1>
     </div>
     <div class="row justify-content-center">
-      <h3 class="text-center text-uppercase">Today's Free Picks</h3>
+      <h3 class="text-center text-uppercase">Today's Free Picks ({% get_todays_pick_date %})</h3>
     </div>
     <div class="row">
       {% get_todays_picks as todays_picks %}
       {% determine_larger_table todays_picks as border_right %}
 
       <div class="d-none d-md-block col-md-3">
-        <img src="../static/images/test-person.png" width="100%"/>
-      </div>
-
-    <div class="col-xs-12 col-md-3 my-auto pick-table" id="scott-col">
-        {% get_scotts_picks todays_picks as scotts_picks %}
-        <table id="scott-table">
-          {% for scotts_pick in scotts_picks %}
-            <tr>
-              {% if border_right %}
-                <td>{{ scotts_pick }}</td>
-              {% else %}
-                <td class="no-border-right">{{ scotts_pick }}</td>
-              {% endif %}
-            </tr>
-          {% endfor %}
-        </table>
+        <img src="../static/images/kane.png" width="100%"/>
       </div>
 
       <div class="col-xs-12 col-md-3 my-auto pick-table" id="kane-col">
@@ -58,9 +43,24 @@
           {% for kanes_pick in kanes_picks %}
             <tr>
               {% if border_right %}
-                <td class="no-border-left">{{ kanes_pick }}</td>
-              {% else %}
                 <td>{{ kanes_pick }}</td>
+              {% else %}
+                <td class="no-border-right">{{ kanes_pick }}</td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+    <div class="col-xs-12 col-md-3 my-auto pick-table" id="scott-col">
+        {% get_scotts_picks todays_picks as scotts_picks %}
+        <table id="scott-table">
+          {% for scotts_pick in scotts_picks %}
+            <tr>
+              {% if border_right %}
+                <td class="no-border-left">{{ scotts_pick }}</td>
+              {% else %}
+                <td>{{ scotts_pick }}</td>
               {% endif %}
             </tr>
           {% endfor %}
@@ -68,7 +68,7 @@
       </div>
 
       <div class="d-none d-md-block col-md-3">
-        <img src="../static/images/test-person.png" width="100%" id="test-img"/>
+        <img src="../static/images/scott.png" width="100%" height="470px" id="scott-img"/>
       </div>
     </div>
   </div>

@@ -19,8 +19,11 @@ textarea {
     padding-top: 15px;
 }
 
-@media (max-width:768px) {
-    #insta-logo {
-        margin-bottom: 10px;
-    }
+.logo-div {
+    width: 50%;
+}
+
+.logos-row {
+    width: 100%;
+    margin: auto;
 }

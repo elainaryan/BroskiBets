@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static pages_tags %}
 
 {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
@@ -11,14 +11,13 @@
         <div class="row" id="title-row">
             <h1 class="col text-center display-3 text-uppercase ">MEET THE BROS</h1>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna 
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
-            aute irure dolor in reprehenderit in voluptate velit esse 
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-            cupidatat non proident, sunt in culpa qui officia deserunt 
-            mollit anim id est laborum.
+        <p>
+            Just 2 Bro's giving you some fire sports picks everyday! Make some money with the boys at BROSKI BETS. 
+            2 Professional Handicappers giving you nothing but straight fire locks everyday.
+            Not only do we make you money but we do weekly recaps to help you pick your favorite capper (Kane or Scott).
+            Follow us on Instagram @broskibets to see documented picks and data daily. Hit us up using <a href="{% url 'go-vip' %}">this form </a>
+            or on social media if you need help understand sports betting and how it works. 
+            Meet you at the cashier. 
         </p>
 
         <div class="about-row">
@@ -35,15 +34,10 @@
                 </div>
 
                 <div class="col-xs-12 col-md-4">
-                    <h1 class="stats display-3 text-center counter" data-count="300">0</h1>
+                    <h1 class="stats display-3 text-center counter" data-count="{% days_since_day_1 %}">0</h1>
                     <p class="text-center">days straight of custom picks</p>
                 </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
         </div>
 
         <div class="about-row">

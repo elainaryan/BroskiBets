@@ -56,9 +56,9 @@ html {
   background-image: linear-gradient(to bottom, #09421f, white);
 }
 
-#test-img {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+#scott-img {
+  padding-top: 20px;
+  height: 100%;
 }
 
 h1, h3 {
@@ -83,11 +83,11 @@ table {
 }
 
 @media (min-width:768px) {
-  #scott-col {
+  #kane-col {
     padding-right: 0;
   }
   
-  #kane-col {
+  #scott-col {
     padding-left: 0;
   }
 
@@ -101,7 +101,7 @@ table {
 }
 
 @media (max-width:768px) {
-  #scott-table tr:last-child td {
+  #kane-table tr:last-child td {
     border-bottom: none;
   }
 
