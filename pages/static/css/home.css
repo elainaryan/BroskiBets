@@ -5,34 +5,19 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background-color: #f0eade;
+  justify-content: center;
 }
 
 #title h1 {
   font-size: 6rem;
-  color: green;
-}
-
-#title .row {
-  margin-top: auto;
+  color: #2d3200;
 }
 
 @media (min-width:768px) {
   #title h1 {
     font-size: 14rem;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-#down-arrow {
-  padding-bottom: 20px;
-}
-
-#anchor {
-  position: absolute;
-  margin-top: -55px;
 }
 /* ---------- END TITLE SECTION STYLE ----------- */
 
